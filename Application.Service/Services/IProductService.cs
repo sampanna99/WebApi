@@ -8,5 +8,7 @@ namespace Application.Service.Services
         List<Product> GetProducts();
         Product GetProduct(int id);
         bool SaveProduct(Product product);
+        bool UpdateProduct(Product product, int id);
+        bool DeleteProduct(int id);
     }
 }

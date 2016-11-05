@@ -35,5 +35,27 @@ namespace Application.WebApi.Controllers
             return BadRequest();
 
         }
+
+        public IHttpActionResult Put(Product product)
+        {
+            var usUpdated = productService.UpdateProduct(product, product.Id);
+
+            if (usUpdated == true)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
+        public IHttpActionResult Delete(int id)
+        {
+            var isdeleted = productService.DeleteProduct(id);
+
+            if (isdeleted == true)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
+
     }
 }
