@@ -7,6 +7,6 @@ namespace Application.Service.Services
     {
         List<Product> GetProducts();
         Product GetProduct(int id);
-
+        bool SaveProduct(Product product);
     }
 }
