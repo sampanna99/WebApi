@@ -5,16 +5,19 @@ using System.Web.Http;
 
 namespace Application.WebApi.Controllers
 {
-    public class ProductController : ApiController
+    public class P1Controller : ApiController
     {
         private IProductService productService = new ProductService();
 
+        [HttpGet]
+        [Route("p1/getproducts")]
         public IEnumerable<Product> Get()
         {
             return productService.GetProducts();
         }
 
-
+        [HttpGet]
+        [Route("p1/{id}/getproduct")]
         public IHttpActionResult Get(int id)
         {
             var product = productService.GetProduct(id);
